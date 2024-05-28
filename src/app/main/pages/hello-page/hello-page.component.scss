@@ -1,0 +1,12 @@
+
+.title{
+  text-align: center;
+  font-size: 6rem;
+  background: linear-gradient(to right, var(--primary-color), var(--alternative-color), #55fbfbc0);
+  background-size: cover;
+  background-clip: text;
+  // indica que debe tomar el background del texto
+  -webkit-background-clip: text;
+  // convierte en transparente el color del texto
+  -webkit-text-fill-color: transparent;
+}

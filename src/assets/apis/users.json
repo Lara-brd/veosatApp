@@ -1,0 +1,14 @@
+
+
+[
+  {
+    "user":"lara",
+    "email":"lara@test.com",
+    "password":"11AA"
+  },
+  {
+    "user":"ana",
+    "email":"ana@test.com",
+    "password":"22BB"
+  }
+]

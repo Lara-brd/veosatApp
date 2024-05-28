@@ -1,0 +1,65 @@
+
+
+<div class="auth-wrapp flex justify-content-center rounded">
+
+  <!-- formulario -->
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmitUser()">
+
+    <!-- Email -->
+    <div class="p-inputgroup flex justify-content-center my-2">
+      <span class="p-inputgroup-addon">
+          <i class="pi pi-at"></i>
+      </span>
+      <input formControlName="email" pInputText placeholder="Email" />
+  </div>
+  <span class="error-text" *ngIf="isValidField('email')">
+    {{getFieldError('email')}}
+  </span>
+
+    <!-- contraseña -->
+    <div class="p-inputgroup flex justify-content-center my-2">
+      <span class="p-inputgroup-addon">
+          <i class="pi pi-key"></i>
+      </span>
+      <input formControlName="password" pInputText placeholder="Contraseña" />
+  </div>
+  <span class="error-text" *ngIf="isValidField('password')">
+    {{getFieldError('password')}}
+  </span>
+
+  <a [routerLink]="['/auth/new-account']">¿ Aún sin registrar? </a>
+
+  <p-button type="submit" label="Login"></p-button>
+  </form>
+
+  <!-- image -->
+  <div class="login-register-img"></div>
+
+</div>
+
+<!-- <h2>Valid</h2>
+
+<pre>{{ loginForm.valid | json }}</pre>
+
+<h2>Value</h2>
+<pre>{{ loginForm.value| json }}</pre>
+
+<h2>Email.errors</h2>
+<pre>{{ loginForm.controls[''] | json }}</pre> -->
+
+
+
+
+<!-- <div class="flex justify-content-center align-items-center flex-wrap login-wrapp flex-column">
+
+  <div class="p-inputgroup flex justify-content-center">
+    <span class="p-inputgroup-addon">
+        <i class="pi pi-user"></i>
+    </span>
+    <input pInputText placeholder="Username" />
+</div> -->
+<!--
+  <div class="flex align-items-center justify-content-center w-4rem h-4rem bg-primary font-bold border-round m-2">1</div>
+  <div class="flex align-items-center justify-content-center w-4rem h-4rem bg-primary font-bold border-round m-2">2</div>
+  <div class="flex align-items-center justify-content-center w-4rem h-4rem bg-primary font-bold border-round m-2">3</div> -->
+<!-- </div> -->

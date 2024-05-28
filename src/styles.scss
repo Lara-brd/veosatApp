@@ -1,1 +1,58 @@
-/* You can add global styles to this file, and also import other style files */
+@import "primeicons/primeicons.css";
+
+body{
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --primary-color: #14B8A6;
+  --alternative-color:#45dbdb;
+
+}
+
+a{
+  color: var(--primary-color );
+  text-decoration: none;
+  font-size:0.8rem;
+}
+
+
+.auth-wrapp{
+  min-width: 600px;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  form{
+    padding:100px;
+    a{
+      display: block;
+    }
+    button{
+      margin-top:20px;
+      width: 100%;
+    }
+  }
+}
+
+.login-register-img{
+  width:200px;
+  background-color: pink;
+  background-image: url('./assets/images/mercedes.jpg');
+  background-size: cover;
+}
+
+.error-text{
+  display: block;
+  color:rgb(219, 24, 24);
+  font-size:0.8rem
+}
+
+.rounded{
+  border-radius: 5px;
+}
+
+.shadowed{
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+

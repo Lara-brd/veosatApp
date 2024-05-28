@@ -1,10 +1,20 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { PrimeNGConfig } from 'primeng/api';
+import { DataService } from './main/services/data.service';
+
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
-export class AppComponent {
-  title = 'veosatApp';
+export class AppComponent implements OnInit{
+
+  constructor( private primengConfig: PrimeNGConfig ) {}
+
+  ngOnInit(): void {
+    this.primengConfig.ripple = true;
+  }
+
+
 }

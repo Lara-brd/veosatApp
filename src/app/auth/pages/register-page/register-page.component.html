@@ -1,0 +1,70 @@
+<div class="auth-wrapp flex justify-content-center rounded">
+
+  <!-- formulario -->
+  <form [formGroup]="registerForm" (ngSubmit)="onSubmitRegister()">
+
+    <!-- Nombre -->
+    <div class="p-inputgroup flex justify-content-center my-2">
+      <span class="p-inputgroup-addon">
+          <i class="pi pi-user"></i>
+      </span>
+      <input formControlName="nombre" pInputText placeholder="Nombre" />
+    </div>
+    <span class="error-text"  *ngIf="isValidField('nombre')">
+      Debe de ser en formato de nombre y apellido
+    </span>
+
+    <!-- Email -->
+    <div class="p-inputgroup flex justify-content-center my-2">
+      <span class="p-inputgroup-addon">
+          <i class="pi pi-at"></i>
+      </span>
+      <input formControlName="email" pInputText placeholder="Email" />
+    </div>
+    <span class="error-text"  *ngIf="isValidField('email')">
+      {{getFieldError('email')}}
+    </span>
+
+    <hr>
+
+    <div class="passwords flex">
+
+      <div>
+        <p-password formControlName="password" placeholder="contraseña" class="mr-2" [toggleMask]="true"></p-password>
+        <span class="error-text" *ngIf="isValidField('password')">
+          {{getFieldError('password')}}
+        </span>
+      </div>
+
+      <div>
+        <p-password formControlName="password2" placeholder="Repite la contraseña" [toggleMask]="true"></p-password>
+        <span class="error-text" *ngIf="isValidField('password2')">
+          {{getFieldError('password2')}}
+        </span>
+      </div>
+    </div>
+
+    <a [routerLink]="['/auth/login']">Ir a login</a>
+
+    <p-button type="submit" label="Crear Cuenta"></p-button>
+  </form>
+
+  <!-- image -->
+  <div class="login-register-img"></div>
+</div>
+
+
+<!--
+<h2>Form Valid</h2>
+<pre>{{ registerForm.valid | json }}</pre>
+
+<h2>Form Value</h2>
+<pre>{{ registerForm.value | json }}</pre>
+
+
+<h2>Form email errors</h2>
+<pre>{{ registerForm.controls['email'].errors | json }}</pre>
+
+<h2>Form contraseña2 errors</h2>
+<pre>{{ registerForm.controls['password2'].errors | json }}</pre>
+ -->

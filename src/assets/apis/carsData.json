@@ -1,0 +1,47 @@
+[
+  {
+    "vehicleCode": "JP",
+    "engine": "2000",
+    "plate": "WJD2356",
+    "brand": "JEEP",
+    "model": "Renegate",
+    "year": 2020,
+    "fuelType": "Diesel",
+    "color": "Blanco",
+    "mileage": 30000,
+    "available": "Disponible",
+    "seatingCapacity": 5,
+    "transmissionType": "Automático",
+    "numberOfDoors": 4
+  },
+  {
+    "vehicleCode": "AX",
+    "engine": "1800",
+    "plate": "AXD1234",
+    "brand": "Honda",
+    "model": "Civic",
+    "year": 2019,
+    "fuelType": "Diesel",
+    "color": "Negro",
+    "mileage": 45000,
+    "status": "En mantenimiento",
+    "seatingCapacity": 5,
+    "transmissionType": "Manual",
+    "numberOfDoors": 4
+  },
+  {
+    "vehicleCode": "SL",
+    "engine": "2000",
+    "plate": "SLFR2024",
+    "brand": "Seat",
+    "model": "Leon FR",
+    "year": 2022,
+    "fuelType": "Gasolina",
+    "color": "Azul",
+    "mileage": 5000,
+    "status": "Disponible",
+    "seatingCapacity": 5,
+    "transmissionType": "Manual",
+    "numberOfDoors": 5
+  }
+]
