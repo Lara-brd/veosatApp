@@ -43,6 +43,7 @@ a{
   background-color: pink;
   background-image: url('./assets/images/mercedes-sm.jpg');
   background-size: cover;
+  border-radius: 0px 5px 5px 2px;
 }
 
 .error-text{
@@ -56,7 +57,8 @@ a{
 }
 
 .shadowed{
-  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+
 }
 
 
