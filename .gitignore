@@ -11,6 +11,9 @@
 npm-debug.log
 yarn-error.log
 
+# Ignorar el directorio environments
+/src/environments/
+
 # IDEs and editors
 .idea/
 .project
@@ -41,5 +44,3 @@ testem.log
 .DS_Store
 Thumbs.db
 
-# Ignorar el directorio environments
-src/environments/
