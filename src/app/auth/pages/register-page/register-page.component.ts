@@ -1,17 +1,22 @@
-
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+
+import { MessageService } from 'primeng/api';
 
 import { ValidatorsService } from '../../../shared/services/validators.service';
 import { AuthService } from '../../services/auth.service';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register-page',
+  providers:[ MessageService ],
   templateUrl: './register-page.component.html',
   styles: `
     hr{
       margin: 20px 0;
+      background-color:var(--alternative-color);
+      border:none;
+      height:1px;
     }
   `
 })
@@ -35,13 +40,15 @@ export class RegisterPageComponent {
     private validatorsSvc: ValidatorsService,
     private authSvc:AuthService,
     private router:Router,
-
+    private messageService: MessageService
   ){}
 
   onSubmitRegister(){
     this.registerForm.markAllAsTouched();
     if( this.registerForm.invalid )return;
     this.authSvc.addUser( this.registerForm.value );
+    this.showToast();
+
     // Una vez creado el nuevo usuario se navega al login
     this.router.navigateByUrl('/auth/login');
 
@@ -76,5 +83,8 @@ export class RegisterPageComponent {
     return null;
   }
 
+  showToast() {
+    this.messageService.add({ severity: 'error', summary: 'Error en ', detail: 'Usuario o contraseña' });
+  }
 
 }

@@ -1,0 +1,12 @@
+
+
+<div class="sidebar shadowed rounded">
+  <div class="vehicle-info flex flex-column"
+    *ngFor ="let vehicle of vehiclesList | async"
+    (click)="flyTo( vehicle.lastLocation )"
+    >
+    <h5>{{ vehicle.brand }} <span>{{ vehicle.model }}</span> </h5>
+    <p class="small">Motor: <span>{{ vehicle.engine }}</span></p>
+    <p class="small">{{ vehicle.fuelType }}</p>
+  </div>
+</div>

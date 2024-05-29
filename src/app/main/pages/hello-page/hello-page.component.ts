@@ -12,10 +12,7 @@ export class HelloPageComponent implements OnInit{
 
   ngOnInit(): void {
 
-    this.dataSvc.getVehicleAndRentals(VehicleCode.Jp).subscribe(v => {
-      console.log(v)
 
-    })
   }
 
 

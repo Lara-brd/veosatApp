@@ -102,8 +102,8 @@ export class AuthService {
     return storedValue ? JSON.parse(storedValue) : null;
   }
 
-  removeLocalStorageItem(key:string):void{
-    localStorage.removeItem(key);
+  removeLocalStorageItem():void{
+    localStorage.removeItem('userId');
   }
   ////////////////////////////////////////////////////////////////////////////
 

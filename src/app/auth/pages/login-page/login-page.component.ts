@@ -1,13 +1,18 @@
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { AuthService } from '../../services/auth.service';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router'
+;
+import { MessageService } from 'primeng/api';
+
+import { AuthService } from '../../services/auth.service';
 import { ValidatorsService } from '../../../shared/services/validators.service';
-import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-login-page',
   templateUrl: './login-page.component.html',
-  styleUrl:'./login-page.component.scss'
+  styleUrl:'./login-page.component.scss',
+  providers:[ MessageService ]
 })
 export class LoginPageComponent implements OnInit{
 
@@ -20,7 +25,8 @@ export class LoginPageComponent implements OnInit{
     private authSvc:AuthService,
     private fb: FormBuilder,
     private validatorsSvc:ValidatorsService,
-    private router:Router
+    private router:Router,
+    private messageService: MessageService
   ){}
 
   ngOnInit(): void {}
@@ -36,7 +42,10 @@ export class LoginPageComponent implements OnInit{
     const usuarioActivo = this.authSvc.verificarCredenciales( email, password);
 
     // SI usuarioActivo = undefined no existe en la base de datos
-    if( usuarioActivo === undefined ){ console.log('email o password incorrectos'); return};
+    if( usuarioActivo === undefined ){
+      this.showToast();
+      return;
+    };
     this.authSvc.usuarioActivoNombre = usuarioActivo.user;
 
     // En local storage deberiamos guardar el token
@@ -76,5 +85,10 @@ export class LoginPageComponent implements OnInit{
   }
 
   ////////////////////////////////////////////////////////////////
+
+  showToast() {
+    this.messageService.add({ severity: 'error', summary: 'Error en ', detail: 'Usuario o contraseña' });
+  }
+
 
 }

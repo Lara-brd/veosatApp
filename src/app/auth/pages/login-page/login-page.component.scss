@@ -1,4 +1,10 @@
 
 
+// Uso estilos encapsulados
+:host ::ng-deep p-password > * {
+  width: 100%;
+}
 
-
+:host ::ng-deep .p-password input.p-inputtext {
+  width: 100% !important;
+}

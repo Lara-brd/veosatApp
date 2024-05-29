@@ -1,5 +1,9 @@
 @import "primeicons/primeicons.css";
 
+* {
+  box-sizing: border-box;
+}
+
 body{
   margin: 0;
   padding: 0;
@@ -8,6 +12,7 @@ body{
 :root {
   --primary-color: #14B8A6;
   --alternative-color:#45dbdb;
+  --gray:rgba(0, 0, 0, 0.55);
 
 }
 
@@ -28,7 +33,6 @@ a{
       display: block;
     }
     button{
-      margin-top:20px;
       width: 100%;
     }
   }
@@ -54,5 +58,6 @@ a{
 .shadowed{
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
+
 
 

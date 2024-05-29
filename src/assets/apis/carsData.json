@@ -12,7 +12,9 @@
     "available": "Disponible",
     "seatingCapacity": 5,
     "transmissionType": "Automático",
-    "numberOfDoors": 4
+    "numberOfDoors": 4,
+    "lastLocation": [-3.960902808002347, 40.85954015024591],
+    "image": "../../../../assets/images/renegade.png"
   },
   {
     "vehicleCode": "AX",
@@ -22,12 +24,14 @@
     "model": "Civic",
     "year": 2019,
     "fuelType": "Diesel",
-    "color": "Negro",
+    "color": "Rojo",
     "mileage": 45000,
     "status": "En mantenimiento",
     "seatingCapacity": 5,
     "transmissionType": "Manual",
-    "numberOfDoors": 4
+    "numberOfDoors": 4,
+    "lastLocation": [-5.943578861923702, 37.49852995830188],
+    "image":"../../../../assets/images/honda.jpg"
   },
   {
     "vehicleCode": "SL",
@@ -42,6 +46,44 @@
     "status": "Disponible",
     "seatingCapacity": 5,
     "transmissionType": "Manual",
-    "numberOfDoors": 5
+    "numberOfDoors": 5,
+    "lastLocation": [2.001843176314024, 41.276592795397484],
+    "image": "../../../../assets/images/seat.jpg"
+  },
+  {
+    "vehicleCode": "VW",
+    "engine": "2500",
+    "plate": "VWJ5678",
+    "brand": "Volkswagen",
+    "model": "Transporter",
+    "year": 2021,
+    "fuelType": "Diesel",
+    "color": "Gris",
+    "mileage": 20000,
+    "status": "Disponible",
+    "seatingCapacity": 3,
+    "transmissionType": "Manual",
+    "numberOfDoors": 4,
+    "lastLocation": [-0.9147299098389884,41.650886500031646],
+    "image": "../../../../assets/images/transporter.jpg"
+  },
+  {
+    "vehicleCode": "BM",
+    "engine": "3000",
+    "plate": "BMW9876",
+    "brand": "BMW",
+    "model": "X5",
+    "year": 2023,
+    "fuelType": "Gasolina",
+    "color": "Negro",
+    "mileage": 10000,
+    "status": "Disponible",
+    "seatingCapacity": 5,
+    "transmissionType": "Automático",
+    "numberOfDoors": 5,
+    "lastLocation": [-6.217535144065672, 41.76028037572084],
+    "image": "../../../../assets/images/bmw_x5.jpg"
+
   }
 ]
+

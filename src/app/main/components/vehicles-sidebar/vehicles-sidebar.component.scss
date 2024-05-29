@@ -1,0 +1,25 @@
+.sidebar{
+  padding:5px 10px 0px 10px;
+  background-color: #fff;
+}
+
+.vehicle-info{
+  border-bottom:1px solid rgba(128, 128, 128, 0.196);
+  z-index: 999;
+  cursor:pointer;
+  padding:15px 0 5px 0;
+  h5, p{
+    padding: 5px; margin:0
+  }
+
+  span{
+    color:var(--gray);
+  }
+  .small{
+    font-size: 0.8rem;
+    color:var(--gray);
+    span{
+      color:rgb(232, 74, 74);
+    }
+  }
+}

@@ -1,0 +1,22 @@
+.toolbar{
+  padding:5px 20px;
+  & >*{
+    margin:10px
+  }
+  p{
+    font-weight: bold;
+    color:gray;
+  }
+  button{
+    padding:8px 15px;
+    background-color: #fff;
+    border:none;
+    cursor:pointer
+  }
+
+  i{
+    font-size: 1.3rem;
+    color:gray
+  }
+}
+

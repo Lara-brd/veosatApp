@@ -25,6 +25,8 @@ export interface Vehicle {
   transmissionType: string;
   numberOfDoors:    number;
   status?:          string;
+  lastLocation:    [number, number];
+  image?:           string;
 }
 
 
