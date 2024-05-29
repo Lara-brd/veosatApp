@@ -4,32 +4,22 @@
 <p-table #dt1 [value]="data" [tableStyle]="{'min-width': '60rem'}"   [globalFilterFields]="['id', 'rentalStartDate', 'startLocation', 'rentalEndDate', 'endLocation', 'totalHours']">
   <ng-template pTemplate="caption">
 
-         <!-- Search -->
-    <div class="flex">
-      <span class="p-input-icon-left ml-auto">
-        <i class="pi pi-search"></i>
-        <input pInputText type="text" (input)="filterGlobal($event)" placeholder="Buscar" />
-      </span>
+        <div class="flex">
+
+          <!-- Refresh -->
+          <p-button class="mr-4" icon="pi pi-refresh" (click)="onLoad()"></p-button>
+
+          <!-- Export -->
+          <button type="button" pButton pRipple icon="pi pi-file-excel" (click)="exportExcel()" class="p-button-success mr-2"  pTooltip="XLS" tooltipPosition="bottom"></button>
+          <button type="button" pButton pRipple icon="pi pi-file-pdf" (click)="exportPdf()" class="p-button-warning mr-2" pTooltip="PDF" tooltipPosition="bottom"></button>
+
+          <!-- search -->
+          <span class="p-input-icon-left ml-auto">
+            <i class="pi pi-search"></i>
+            <input pInputText type="text" (input)="filterGlobal($event)" placeholder="Buscar" />
+          </span>
     </div>
 
-
-
-
-  <!-- Refresh -->
-    <div class="flex align-items-center justify-content-between">
-        Products
-        <p-button icon="pi pi-refresh" (click)="onLoad()"></p-button>
-    </div>
-
-
-    <!-- Export -->
-    <div class="flex">
-      <button type="button" pButton pRipple icon="pi pi-file-excel" (click)="exportExcel()" class="p-button-success mr-2"  pTooltip="XLS" tooltipPosition="bottom"></button>
-      <!-- <button type="button" pButton pRipple icon="pi pi-file" (click)="dt.exportCSV()" class="mr-2" pTooltip="CSV" tooltipPosition="bottom"></button> -->
-      <!-- <button type="button" pButton pRipple icon="pi pi-file-excel" (click)="exportExcel()" class="p-button-success mr-2" pTooltip="XLS" tooltipPosition="bottom"></button> -->
-      <button type="button" pButton pRipple icon="pi pi-file-pdf" (click)="exportPdf()" class="p-button-warning mr-2" pTooltip="PDF" tooltipPosition="bottom"></button>
-      <!-- <button type="button" pButton pRipple icon="pi pi-filter" (click)="dt.exportCSV({ selectionOnly: true })" class="p-button-info ml-auto" pTooltip="Selection Only" tooltipPosition="bottom"></button> -->
-  </div>
   </ng-template>
 
   <ng-template pTemplate="header">
