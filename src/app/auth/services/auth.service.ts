@@ -22,6 +22,11 @@ export class AuthService {
     this._authSuccess = success;
   }
 
+  private _newUserEmail:string = '';
+
+  get newUser():string {
+    return this._newUserEmail;
+  }
 
 
   // Listado de usuario provisional -> los usuarios deberan venir de backend y sus contraseñas encriptadas de manera que aqui se trabajará con el token
@@ -86,7 +91,7 @@ export class AuthService {
   // Añade usuario en la aplicación ( new-account )
   addUser( user: User ){
     this._usersList.push(user);
-    console.log(this._usersList)
+    this._newUserEmail = user.email
   }
 
 

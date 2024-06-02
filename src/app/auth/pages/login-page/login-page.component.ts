@@ -16,8 +16,12 @@ import { ValidatorsService } from '../../../shared/services/validators.service';
 })
 export class LoginPageComponent implements OnInit{
 
+ get newUserEmail(){
+  return this.authSvc.newUser || '';
+ }
+
   public loginForm:FormGroup = this.fb.group({
-    email:['', [ Validators.required, Validators.pattern( this.validatorsSvc.emailPattern ) ] ],
+    email:[ this.newUserEmail, [ Validators.required, Validators.pattern( this.validatorsSvc.emailPattern ) ] ],
     password: ['', [Validators.required, Validators.minLength(4) ]]
   })
 
