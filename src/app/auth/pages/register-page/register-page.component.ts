@@ -11,14 +11,7 @@ import { AuthService } from '../../services/auth.service';
   selector: 'app-register-page',
   providers:[ MessageService ],
   templateUrl: './register-page.component.html',
-  styles: `
-    hr{
-      margin: 20px 0;
-      background-color:var(--alternative-color);
-      border:none;
-      height:1px;
-    }
-  `
+  styleUrls:['./register-page.component.scss']
 })
 export class RegisterPageComponent {
 

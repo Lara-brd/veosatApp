@@ -1,0 +1,34 @@
+
+
+hr{
+  margin: 20px 0;
+  background-color:var(--alternative-color);
+  border:none;
+  height:1px;
+}
+
+// Uso estilos encapsulados
+:host ::ng-deep p-password > * {
+  width: 100%;
+}
+
+:host ::ng-deep .p-password input.p-inputtext {
+  width: 100% !important;
+}
+.passwords>*{
+  margin: 10px 0;
+}
+
+.passwords div:first-child {
+  margin-right: 10px;
+}
+
+@media (max-width: 770px) {
+  .passwords{
+    flex-direction: column;
+  }
+  .passwords div:first-child {
+    margin-right:0;
+  }
+}
+
