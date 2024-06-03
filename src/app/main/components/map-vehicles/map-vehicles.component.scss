@@ -1,5 +1,5 @@
 
-#map{
+#map, .loader{
   width: 100%;
   height: 800px;
 }
@@ -9,6 +9,19 @@ app-vehicles-sidebar{
   top:350px;
   width: 250px;
 }
+
+.loader{
+  background-color: rgb(241, 241, 241);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  img{
+    width: 80px;
+    height: 80px;
+  }
+}
+
+
 
 @media (max-width: 1100px) {
   app-vehicles-sidebar{

@@ -15,6 +15,8 @@ import { MapVehiclesComponent } from './components/map-vehicles/map-vehicles.com
 import { environment } from '../../environments/environment.development';
 import { VehiclesSidebarComponent } from './components/vehicles-sidebar/vehicles-sidebar.component';
 import { ToolbarComponent } from './components/toolbar/toolbar.component';
+import { LoaderComponent } from './components/svgs/loader/loader.component';
+
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import { ToolbarComponent } from './components/toolbar/toolbar.component';
     TableComponent,
     MapVehiclesComponent,
     VehiclesSidebarComponent,
-    ToolbarComponent
+    ToolbarComponent,
+    LoaderComponent
+
   ],
   imports: [
     CommonModule,

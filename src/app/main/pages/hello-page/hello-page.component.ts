@@ -8,6 +8,8 @@ import { VehicleCode } from '../../interfaces/data.interface';
 })
 export class HelloPageComponent implements OnInit{
 
+  private hasLoaded:boolean = false;
+
   constructor( private dataSvc: DataService ){}
 
   ngOnInit(): void {

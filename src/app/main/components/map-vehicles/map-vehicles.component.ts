@@ -18,11 +18,12 @@ export class MapVehiclesComponent implements AfterViewInit{
   public vehicles: Vehicle[] = [];
   currentCenter: LngLat  = new LngLat( -3.6887986147530913, 40.414283392854905); ; // Coordenadas de ejemplo
 
+  public isLoading:boolean = true;
+
   constructor( private dataSvc:DataService ){ }
 
   ngAfterViewInit(): void {
     this.initMap();
-
   }
 
   initMap(){
@@ -40,6 +41,7 @@ export class MapVehiclesComponent implements AfterViewInit{
   mapListeners(){
     // cuando carga el mapa ya puedo cargar la info de backend y crear los marcadores
     this.map?.on('load', () => {
+      this.isLoading = false;
       this.getVehiclesMarkers();
     })
 
@@ -71,7 +73,6 @@ export class MapVehiclesComponent implements AfterViewInit{
   }
 
   flyTo( location: [number, number]){
-    console.log('el padre', location);
     this.map?.flyTo({
       zoom:14,
       center:location

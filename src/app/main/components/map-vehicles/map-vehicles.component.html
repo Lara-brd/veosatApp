@@ -1,6 +1,14 @@
 
+<div class="loader" *ngIf="isLoading">
+  <size-loader [color]="'#14B8A6'"></size-loader>
+</div>
+
+
 <div #map id="map"></div>
 <app-vehicles-sidebar (flyToVehicle)="flyTo($event)"></app-vehicles-sidebar>
+
+
+
 
 
 
