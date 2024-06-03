@@ -48,6 +48,8 @@ export class AuthService {
   private apiUrl: string = 'assets/apis/users.json';
 
   constructor( private http: HttpClient ) {
+    const TOKEN = this.getLocalSorageItem('userId');
+    console.log('token', TOKEN)
     // Al guardar el token en localStorage la sesion es persistente
     this.checkToken();
   }
@@ -55,6 +57,15 @@ export class AuthService {
   // se verifica token si está guardado en localstorage
   private checkToken(){
     const TOKEN = this.getLocalSorageItem('userId');
+
+
+    // Verificar si TOKEN es undefined o null
+    // if (TOKEN === null || TOKEN === undefined) {
+    //   console.log('token no válido')
+    //   return;
+    // }
+
+
     const usuario = this.getUsuarioActivoById(TOKEN);
 
     this.usuarioActivoNombre = usuario?.user || '';
@@ -90,7 +101,10 @@ export class AuthService {
 
   // Añade usuario en la aplicación ( new-account )
   addUser( user: User ){
+    user.id = `${this._usersList.length + 1}`;
+    console.log('user',user)
     this._usersList.push(user);
+
     this._newUserEmail = user.email
   }
 

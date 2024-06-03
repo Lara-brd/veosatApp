@@ -12,7 +12,7 @@
     "available": "Disponible",
     "seatingCapacity": 5,
     "transmissionType": "Automático",
-    "numberOfDoors": 5,
+    "numberOfDoors": 3,
     "lastLocation": [-3.960902808002347, 40.85954015024591],
     "image": "../../../../assets/images/renegade.png"
   },

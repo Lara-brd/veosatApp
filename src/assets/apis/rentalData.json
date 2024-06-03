@@ -4,7 +4,7 @@
     "vehicleCode": "JP",
     "rentalStartDate": "2024-05-23T10:00:00Z",
     "rentalEndDate": "2024-05-23T18:00:00Z",
-    "totalHours": 5,
+    "totalHours": 10,
     "startLocation": "Madrid",
     "endLocation": "Barcelona"
   },
