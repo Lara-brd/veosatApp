@@ -20,6 +20,7 @@ a{
   color: var(--primary-color );
   text-decoration: none;
   font-size:0.8rem;
+
 }
 
 
@@ -42,39 +43,31 @@ a{
   width: 100%;
 }
 
-
-
-// .auth-wrapp{
-//   min-width: 600px;
-//   background-color: white;
-//   box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
-//   form{
-//     padding:100px;
-//     a{
-//       display: block;
-//     }
-//     button{
-//       width: 100%;
-//     }
-//   }
-// }
-
-// .login-register-img{
-//   width:200px;
-//   background-image: url('./assets/images/mercedes-sm.jpg');
-//   background-size: cover;
-//   border-radius: 0px 5px 5px 2px;
-// }
+// AUTH //////////////////////////
 
 .auth-wrapp{
   padding:10px;
-  h1{
-    color:white;
+  background-color: #ffffffd9;
+  padding:50px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  h1, h3{
+    color:var(--gray);
     text-align: center;
-
+  }
+  h1{
+    margin-bottom: 0;
+  }
+  h3{
+    opacity: 0.6;
   }
   button{
     width: 100%;
+  }
+  a{
+    padding-bottom: 10px;
+    span{
+      color:var(--gray)
+    }
   }
 }
 

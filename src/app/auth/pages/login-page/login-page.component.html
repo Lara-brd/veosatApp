@@ -7,6 +7,7 @@
   <form class="flex flex-column justify-content-center" [formGroup]="loginForm" (ngSubmit)="onSubmitUser()">
 
     <h1>Login</h1>
+    <h3>Información de tus vehículos</h3>
 
   <!-- Email -->
     <div class="p-inputgroup flex justify-content-center my-2">
@@ -26,19 +27,15 @@
     </span>
 
 
-    <a [routerLink]="['/auth/new-account']" class="mt-6 mb-2">¿ Aún sin registrar? </a>
-
-    <!-- Toast - en caso que el usuario y contraseña no sean correctos -->
+    <a [routerLink]="['/auth/new-account']" class="mt-6 mb-2"><span>¿ Aún sin registrar?</span> Regístrate </a>
     <p-button type="submit" label="Login"></p-button>
 
   </form>
 
-  <!-- image -->
-  <!-- <div class="login-register-img"></div> -->
-
 </div>
 
 
+<!-- Toast - en caso que el usuario y contraseña no sean correctos -->
 <!-- Toast fuera de form para que no le afecten las clases de este -->
 <p-toast></p-toast>
 

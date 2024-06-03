@@ -3,9 +3,15 @@
 .wrapp{
   height: 100vh;
   width: 100vw;
-  background: #000000;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #434343, #000000);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #434343, #000000); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: #ffffff;  /* fallback for old browsers */
+  background:
+  linear-gradient(to right, #2c5364, #203a43f2, #0f2027b7),
+
+    url(../../../../assets/images/mercedes.jpg); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  background-size:cover;
+  background-repeat: no-repeat;
+
   padding:50px;
 }
 @media (max-width: 770px){
@@ -14,3 +20,5 @@
     width: 100%;
   }
 }
+
+

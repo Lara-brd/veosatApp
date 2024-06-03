@@ -39,11 +39,15 @@ export class RegisterPageComponent {
   onSubmitRegister(){
     this.registerForm.markAllAsTouched();
     if( this.registerForm.invalid )return;
-    this.authSvc.addUser( this.registerForm.value );
-    this.showToast();
 
-    // Una vez creado el nuevo usuario se navega al login
-    this.router.navigateByUrl('/auth/login');
+    // Usuario creado correctamente
+    this.showToast()
+    this.authSvc.addUser( this.registerForm.value );
+
+    // Retrasar la navegación al login durante 1 segundos
+    setTimeout(() => {
+      this.router.navigateByUrl('/auth/login');
+    }, 1000);
 
   }
 
@@ -76,8 +80,10 @@ export class RegisterPageComponent {
     return null;
   }
 
+
+
   showToast() {
-    this.messageService.add({ severity: 'error', summary: 'Error en ', detail: 'Usuario o contraseña' });
-  }
+    this.messageService.add({ severity: 'success', summary: 'Success', detail: 'Usuario creado correctamente' });
+}
 
 }
