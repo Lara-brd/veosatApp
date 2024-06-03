@@ -16,6 +16,7 @@ import { environment } from '../../environments/environment.development';
 import { VehiclesSidebarComponent } from './components/vehicles-sidebar/vehicles-sidebar.component';
 import { ToolbarComponent } from './components/toolbar/toolbar.component';
 import { LoaderComponent } from './components/svgs/loader/loader.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -35,6 +36,7 @@ import { LoaderComponent } from './components/svgs/loader/loader.component';
     CommonModule,
     MainRoutingModule,
     PrimeNgModule,
+    ReactiveFormsModule
   ]
 })
 export class MainModule { }

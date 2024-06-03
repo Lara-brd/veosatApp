@@ -7,6 +7,9 @@ import * as XLSX from 'xlsx';
 import * as FileSaver from 'file-saver';
 
 import { Rental } from '../../interfaces/data.interface';
+import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { DataService } from '../../services/data.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-table',
@@ -19,6 +22,7 @@ export class TableComponent implements OnInit{
   // Recibiendo info del componente padre ( array de alquileres del coche )
   @Input() data: Rental[] = [];
 
+
   // Emitimos loading para que el componente informe refresque la información
   @Output() loading = new EventEmitter();
 
@@ -26,8 +30,16 @@ export class TableComponent implements OnInit{
 
   cols: any[] = [];
   exportColumns: any[] = [];
+  formGroup: FormGroup =  this.fb.group({});
+
+  constructor( private fb:FormBuilder, private dataSvc:DataService ){}
 
   ngOnInit(): void {
+
+    this.formGroup = this.fb.group({
+      date: [null]
+    })
+
 
     //Array de columnas necesario para crear el documento pdf
     this.cols = [
@@ -40,6 +52,7 @@ export class TableComponent implements OnInit{
   ];
 
   this.exportColumns = this.cols.map(col => ({title: col.header, dataKey: col.field}));
+
   }
 
   // Emitimos al componente padre para que actualice la información
@@ -59,6 +72,45 @@ export class TableComponent implements OnInit{
     if (this.dt1) {
       this.dt1.filterGlobal(input.value, 'contains');
     }
+  }
+
+  onDateSelect(selectedDate:Date){
+
+    const searchResult:any[] = [];
+
+    this.data.forEach(rental => {
+      rental.rentalStartDate = new Date(rental.rentalStartDate)
+
+      if(
+        (rental.rentalEndDate.getFullYear() === selectedDate.getFullYear()) &&
+        (rental.rentalEndDate.getMonth() === selectedDate.getMonth()) &&
+        (rental.rentalEndDate.getDate() === selectedDate.getDate())
+
+      ){
+        searchResult.push(rental)
+      }else{
+        console.log('no hay fechas')
+      }
+
+    });
+
+    this.data = searchResult;
+    this.dt1?.reset();
+
+
+    // const selectedRental = this.data.filter(rental => {
+    //   const rentalStartDate = new Date( rental.rentalStartDate);
+    //   return rentalStartDate.getFullYear() === selectedDate.getFullYear() &&
+    //     rentalStartDate.getMonth() === selectedDate.getMonth()
+    // })
+
+    // if (selectedRental) {
+    //   console.log('Rental object:', selectedRental);
+    //   // Aquí puedes hacer lo que quieras con el objeto seleccionado
+    // } else {
+    //   console.log('No rental found for selected date.');
+    // }
+
   }
 
 

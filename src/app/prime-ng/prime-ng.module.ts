@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 
 import { ButtonModule } from 'primeng/button';
+import { CalendarModule } from 'primeng/calendar';
 import { ChartModule } from 'primeng/chart';
 import { DividerModule } from 'primeng/divider';
 import { InputTextModule } from 'primeng/inputtext';
@@ -15,6 +16,7 @@ import { ToastModule } from 'primeng/toast';
   declarations: [],
   imports: [
     ButtonModule,
+    CalendarModule,
     ChartModule,
     InputTextModule,
     DividerModule,
@@ -25,6 +27,7 @@ import { ToastModule } from 'primeng/toast';
   ],
   exports:[
     ButtonModule,
+    CalendarModule,
     ChartModule,
     DividerModule,
     InputTextModule,

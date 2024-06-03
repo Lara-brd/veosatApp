@@ -1,36 +1,45 @@
 
-<hr>
+
 
 <p-table #dt1 [value]="data" [tableStyle]="{'min-width': '60rem'}"   [globalFilterFields]="['id', 'rentalStartDate', 'startLocation', 'rentalEndDate', 'endLocation', 'totalHours']">
   <ng-template pTemplate="caption">
 
-        <div class="flex">
+        <div class="flex align-items-center">
+          <i class="pi pi-calendar icon-calendar"></i>
+          <!-- search date -->
+          <div class="card flex justify-content-center align-items-center mr-2">
+            <form [formGroup]="formGroup">
+                <p-calendar formControlName="date" (onSelect)="onDateSelect($event)"></p-calendar>
+            </form>
+          </div>
 
           <!-- Refresh -->
           <p-button class="mr-4" icon="pi pi-refresh" (click)="onLoad()"></p-button>
-
+          <!-- <input pInputText type="text" (input)="filterGlobal($event)" placeholder="Buscar" /> -->
           <!-- Export -->
-          <button type="button" pButton pRipple icon="pi pi-file-excel" (click)="exportExcel()" class="p-button-success mr-2"  pTooltip="XLS" tooltipPosition="bottom"></button>
-          <button type="button" pButton pRipple icon="pi pi-file-pdf" (click)="exportPdf()" class="p-button-warning mr-2" pTooltip="PDF" tooltipPosition="bottom"></button>
 
           <!-- search -->
-          <span class="p-input-icon-left ml-auto">
+          <span class="p-input-icon-left ml-auto donwload-btns">
             <i class="pi pi-search"></i>
-            <input pInputText type="text" (input)="filterGlobal($event)" placeholder="Buscar" />
+            <button type="button" pButton pRipple icon="pi pi-file-excel" (click)="exportExcel()" class="p-button-success mr-2"  pTooltip="XLS" tooltipPosition="bottom"></button>
+            <button type="button" pButton pRipple icon="pi pi-file-pdf" (click)="exportPdf()" class="p-button-warning mr-2" pTooltip="PDF" tooltipPosition="bottom"></button>
+
           </span>
     </div>
 
   </ng-template>
 
   <ng-template pTemplate="header">
+
       <tr>
-          <th pSortableColumn="id" style="width:10%">Id <p-sortIcon field="id"></p-sortIcon></th>
-          <th pSortableColumn="rentalStartDate" style="width:20%">Start Date <p-sortIcon field="rentalStartDate"></p-sortIcon></th>
-          <th pSortableColumn="startLocation" style="width:20%">Start Location <p-sortIcon field="startLocation"></p-sortIcon></th>
-          <th pSortableColumn="rentalEndDate" style="width:20%">End Date <p-sortIcon field="rentalEndDate"></p-sortIcon></th>
-          <th pSortableColumn="endLocation" style="width:20%">End location <p-sortIcon field="endLocation"></p-sortIcon></th>
-          <th pSortableColumn="totalHours" style="width:20%">Total Hours <p-sortIcon field="totalHours"></p-sortIcon></th>
+        <th pSortableColumn="id" style="width:10%">Id <p-sortIcon field="id"></p-sortIcon></th>
+        <th pSortableColumn="rentalStartDate" style="width:20%">Start Date <p-sortIcon field="rentalStartDate"></p-sortIcon></th>
+        <th pSortableColumn="startLocation" style="width:20%">Start Location <p-sortIcon field="startLocation"></p-sortIcon></th>
+        <th pSortableColumn="rentalEndDate" style="width:20%">End Date <p-sortIcon field="rentalEndDate"></p-sortIcon></th>
+        <th pSortableColumn="endLocation" style="width:20%">End location <p-sortIcon field="endLocation"></p-sortIcon></th>
+        <th pSortableColumn="totalHours" style="width:20%">Total Hours <p-sortIcon field="totalHours"></p-sortIcon></th>
       </tr>
+
   </ng-template>
   <ng-template pTemplate="body" let-product>
       <tr>

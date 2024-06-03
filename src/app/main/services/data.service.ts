@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, forkJoin, map, of, switchMap, tap } from 'rxjs';
+import { Observable, Subscription, forkJoin, map, of, switchMap, tap } from 'rxjs';
 import { Rental, Vehicle, VehicleCode } from '../interfaces/data.interface';
 
 @Injectable({
@@ -42,6 +42,8 @@ export class DataService {
   getVehicles(): Observable< Vehicle []>{
     return this.http.get< Vehicle[] >(this.apiCarsUrl)
   }
+
+
 
 
 }
